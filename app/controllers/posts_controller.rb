@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 	  if @post.update(params.require(:post).permit(:title, :description, :post_status, :author_id))
 	    redirect_to post_path(@post)
 	  else 
-	    redirect_to edit
+	    render :edit
 	  end
 	end
 

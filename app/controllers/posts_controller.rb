@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 	 # binding.pry
 	  @post = Post.find(params[:id])
 	  if @post.update(params.require(:post).permit(:title, :description, :post_status, :author_id))
+	    binding.pry
 	    redirect_to post_path(@post)
 	  else 
 	    render :edit
